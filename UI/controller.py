@@ -52,7 +52,8 @@ class Controller:
 
         #lista delle tratte
 
-        for h1,h2,valore in self._model.get_all_edges():
+        for h1,h2,attributes in self._model.G.edges(data=True):
+            valore = attributes['weight'] #in tale modo si estrae il peso dal dizionario
             riga = ft.Text(f'{h1.nome} ({h1.stato} --> {h2.nome} ({h2.stato})'
                            f'guadagno medio per spedizione: {valore:.2f} euro')
 

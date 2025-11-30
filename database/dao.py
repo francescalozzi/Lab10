@@ -12,7 +12,7 @@ class DAO:
         "dizionario con tutti gli hub del database"
 
         conn = DBConnect.get_connection()
-        cursore = conn.cursor(dictonary=True)
+        cursore = conn.cursor(dictionary=True)
 
         query = 'SELECT * FROM hub'
         cursore.execute(query)
@@ -37,7 +37,7 @@ class DAO:
         con somma di valori, numero di spedizioni e guadagno medio"""
 
         conn = DBConnect.get_connection()
-        cursore = conn.cursor(dictonary=True)
+        cursore = conn.cursor(dictionary=True)
 
         query = """SELECT 
                         LEAST(id_hub_origine, id_hub_destinazione) AS hub1,
